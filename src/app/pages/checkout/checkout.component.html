@@ -1,0 +1,36 @@
+<section class="main-section space-y-5 w-1/2 m-auto my-10">
+  <h1 class="text-black text-center text-5xl w-fit m-auto mb-10">Check Out</h1>
+  <form [formGroup]="checkOutForm" class="space-y-5">
+    <div>
+      <app-input
+        [control]="checkOutForm.get('shippingadress')?.get('details')"
+        [element]="'text'"
+        [idInput]="'hello'"
+        [placeholderInput]="'hello'"
+      ></app-input>
+    </div>
+    <div>
+      <app-input
+        [typeInput]="'text'"
+        [placeholderInput]="'phone'"
+        [idInput]="'phone'"
+        [labelInput]="'phone'"
+        [control]="checkOutForm.get('shippingadress')?.get('phone')"
+      ></app-input>
+    </div>
+    <div>
+      <app-input
+        [typeInput]="'text'"
+        [placeholderInput]="'city'"
+        [idInput]="'city'"
+        [labelInput]="'city'"
+        [control]="checkOutForm.get('shippingadress')?.get('city')"
+      ></app-input>
+    </div>
+
+    <div class="flex justify-between w-1/2 m-auto">
+      <button class="main-btn" (click)="submitForm()">payment by Visa</button>
+      <button class="main-btn" (click)="submitCash()">payment by Cash</button>
+    </div>
+  </form>
+</section>

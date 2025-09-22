@@ -1,1 +1,155 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+@plugin "daisyui";
+
+@utility container {
+  margin-inline: auto;
+}
+:root {
+  --main-color: #8b5e35;
+  --second-color: #9b7e5c;
+  --text-color: #090f41;
+  --text-sec-color: #9d9daa;
+  --bg-color: #f6f6f6;
+  --bg-footer: #2e2e2e;
+  /* --my-color: oklch(50% 0.233 277.117); */
+  /* --my-sec: oklch(25.33% 0.016 252.42); */
+  /* --my-color: oklch(92.952% 0.01927 263.058); */
+  --my-color: #9b7e5c;
+  --my-sec: oklch(54.468% 0.13669 253.942);
+  --test1: oklch(0.95 0.03 270deg);
+  /* --test2-cards: oklch(0.9 0.04 260deg); */
+  --test2-cards: oklch(84.132% 0.04954 260.899);
+  --test3: oklch(0.12 0.02 300deg);
+  --test4-secT: oklch(0.35 0.02 280deg);
+  --test4-primeT: oklch(0.35 0.02 280deg);
+  --test4-btn: oklch(0.6 0.2 130deg);
+  --test-btn-hover: oklch(0.55 0.25 130deg);
+  --test-icon-border: oklch(0.7 0.15 50deg);
+  --test-alert: oklch(0.65 0.25 40deg);
+  --test-links: oklch(0.55 0.2 250deg);
+
+  --neutral-50: oklch(0.98 0.005 250); /* أبيض دافئ جداً */
+  --neutral-100: oklch(0.95 0.01 250); /* أبيض دافئ */
+  --neutral-200: oklch(0.9 0.015 250); /* رمادي فاتح جداً */
+  --neutral-300: oklch(0.85 0.02 250); /* رمادي فاتح */
+  --neutral-400: oklch(0.7 0.03 250); /* رمادي متوسط */
+  --neutral-500: oklch(0.55 0.04 250); /* رمادي */
+  --neutral-600: oklch(0.45 0.05 250); /* رمادي داكن */
+  --neutral-700: oklch(0.35 0.05 250); /* رمادي داكن جداً */
+  --neutral-800: oklch(0.25 0.04 250); /* أسود فاتح */
+  --neutral-900: oklch(0.15 0.03 250); /* أسود ناعم */
+
+  --success: oklch(0.85 0.15 150); /* أخضر ناعم */
+  --warning: oklch(0.8 0.18 90); /* برتقالي فاتح */
+  --error: oklch(0.75 0.18 30); /* أحمر مرجاني فاتح */
+  --info: oklch(0.8 0.1 250); /* أزرق لافندر فاتح */
+
+  --body-bg: oklch(98% 0.01 240);
+  --nav-footer-bg: oklch(40% 0.12 260);
+  /* --section-bg: oklch(96% 0.03 250); */
+  --section-bg: #f6f6f6;
+  --card-bg: oklch(100% 0 0);
+
+  --header-color: oklch(30% 0.08 260);
+  --button-bg: oklch(60% 0.15 250);
+  --button-hover: oklch(55% 0.18 250);
+  --input-bg: oklch(100% 0 0);
+  --input-border: oklch(80% 0.05 250);
+  --nav-text: #be7b3d;
+}
+
+body {
+  @apply bg-[var(--bg-color)];
+  min-height: 100vh;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@layer components {
+  .main-link {
+    @apply text-[var(--main-color)] cursor-pointer underline;
+  }
+  .btn-primary {
+    @apply bg-[var(--button-bg)] text-white border-0 hover:bg-[var(--my-color)] hover:text-[var(--info)] hover:shadow-sm;
+  }
+  /* styles.css أو أي ملف Tailwind الخاص بك */
+  .card-border {
+    @apply border-2 border-[var(--my-color)] rounded-lg p-4 shadow-md;
+  }
+
+  .main-section {
+    @apply bg-transparent w-full p-4 md:p-6 mt-10 text-white border-2 rounded-2xl border-transparent focus:border-[var(--my-color)] focus:outline-none focus:ring-0;
+  }
+  .main-btn {
+    @apply btn btn-soft btn-primary ms-2;
+  }
+  .main-inputs {
+    @apply input bg-white input-lg w-full border-2 border-transparent focus:border-[var(--my-color)] focus:outline-none focus:ring-0 text-black;
+  }
+
+  .name-lable {
+    @apply absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1;
+  }
+}
+h1 {
+  color: var(--header-color);
+  font-size: 24px;
+}
+
+/* todo Toaster style */
+/* كل التوستات */
+#toast-container > div {
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  opacity: 0.95;
+}
+
+/* Success */
+.toast-success {
+  background: linear-gradient(135deg, #22c55e, #15803d) !important;
+  color: #fff !important;
+}
+
+/* Error */
+.toast-error {
+  background: var(--error) !important;
+  color: #fff !important;
+}
+
+/* Warning */
+.toast-warning {
+  background: linear-gradient(135deg, #facc15, #ca8a04) !important;
+  color: #000 !important;
+}
+
+/* Info */
+.toast-info {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+  color: #fff !important;
+}
+.main-btn {
+  @apply bg-[var(--second-color)] text-white hover:bg-white hover:text-[var(--second-color)] hover:border-[var(--second-color)] border-2 border-[var(--second-color)];
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.text-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+
+  font-style: normal;
+}
+.crimson-pro {
+  font-family: "Crimson Pro", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 28px;
+}

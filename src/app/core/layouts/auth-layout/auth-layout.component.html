@@ -1,0 +1,18 @@
+<!-- @if (loadCheck) {
+<div class="flex flex-col min-h-screen relative">
+  <div class="w-full flex justify-center items-center bg-white"></div>
+  <app-brand-loader></app-brand-loader>
+</div>
+
+} -->
+
+<app-brand-loader></app-brand-loader>
+<!-- todo hena bn7ot al login w al register -->
+
+<div class="flex flex-col min-h-screen">
+  <!-- <app-navbar [islogin]="false"></app-navbar> -->
+
+  <main class="flex-grow">
+    <router-outlet></router-outlet>
+  </main>
+</div>

@@ -1,0 +1,178 @@
+<div>
+  <label [for]="idInput" class="floating-label text-black">
+    <span>{{ placeholderInput }}</span>
+    @if (element==='input') {
+    <input
+      [formControl]="control"
+      [type]="typeInput || (flag == true ? 'password' : 'text')"
+      [placeholder]="placeholderInput"
+      [id]="idInput"
+      class="main-inputs ps-10"
+    />
+    @if (typeInput==='email') {
+    <div
+      class="absolute inset-y-0 start-3 flex items-center text-gray-700 z-50"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M17 3.25C20.1756 3.25 22.75 5.82436 22.75 9V15C22.75 18.1756 20.1756 20.75 17 20.75H7C3.82436 20.75 1.25 18.1756 1.25 15V9C1.25 5.82436 3.82436 3.25 7 3.25H17ZM18.5996 8.5498C18.351 8.2187 17.8811 8.15194 17.5498 8.40039L12.75 12C12.3056 12.3333 11.6944 12.3333 11.25 12L6.4502 8.40039C6.11893 8.15194 5.64898 8.2187 5.40039 8.5498C5.15194 8.88107 5.2187 9.35102 5.5498 9.59961L10.3496 13.2002C11.3274 13.9335 12.6726 13.9335 13.6504 13.2002L18.4502 9.59961C18.7813 9.35102 18.8481 8.88107 18.5996 8.5498Z"
+          fill="#17181A"
+        />
+      </svg>
+    </div>
+    }@else if (typeInput==='tel') {
+    <div
+      class="absolute inset-y-0 start-3 flex items-center text-gray-700 z-50"
+    >
+      <svg
+        width="14"
+        height="22"
+        viewBox="0 0 14 22"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          x="1"
+          y="1"
+          width="12"
+          height="20"
+          rx="3"
+          stroke="#000"
+          stroke-width="1.5"
+        />
+        <path
+          d="M9 1.5L5 1.5"
+          stroke="#000"
+          stroke-width="2.5"
+          stroke-linecap="round"
+        />
+      </svg>
+    </div>
+    } @else if (typeInput==='text'&& idInput !== 'verifyCode') {
+    <div
+      class="absolute inset-y-0 start-3 flex items-center text-gray-700 z-50"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="4"
+          cy="4"
+          r="4"
+          transform="matrix(-1 0 0 1 16 3)"
+          stroke="black"
+          stroke-width="1.5"
+        />
+        <path
+          d="M5 16.9347C5 16.0743 5.54085 15.3068 6.35109 15.0175V15.0175C10.004 13.7128 13.996 13.7128 17.6489 15.0175V15.0175C18.4591 15.3068 19 16.0743 19 16.9347V18.2502C19 19.4376 17.9483 20.3498 16.7728 20.1818L15.8184 20.0455C13.2856 19.6837 10.7144 19.6837 8.18162 20.0455L7.22721 20.1818C6.0517 20.3498 5 19.4376 5 18.2502V16.9347Z"
+          stroke="black"
+          stroke-width="1.5"
+        />
+      </svg>
+    </div>
+    } @else if (idInput==='password'||idInput==='rePassword') {
+    <div
+      class="absolute inset-y-0 start-3 flex items-center text-gray-700 z-50"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          x="4"
+          y="9"
+          width="16"
+          height="12"
+          rx="4"
+          stroke="#17181A"
+          stroke-width="1.5"
+        />
+        <path
+          d="M12 16L12 14"
+          stroke="#17181A"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M16 9V7C16 4.79086 14.2091 3 12 3V3C9.79086 3 8 4.79086 8 7L8 9"
+          stroke="#17181A"
+          stroke-width="1.5"
+        />
+      </svg>
+    </div>
+    }
+
+    <!-- !Break Point -->
+
+    } @if (element==='text') {<textarea
+      [formControl]="control"
+      [placeholder]="placeholderInput"
+      [id]="idInput"
+      class="main-inputs"
+    ></textarea
+    >} @if (idInput === 'password'||idInput==='rePassword') {
+    <div class="absolute top-1/2 end-4 -translate-y-1/2 cursor-pointer z-50">
+      <span (click)="flag = !flag" class="bg-transparent">
+        @if (flag===true) {
+        <span> <i class="fa-solid fa-eye"></i></span>
+        }@else {
+        <span> <i class="fa-solid fa-eye-slash"></i></span>
+        }
+      </span>
+    </div>
+    }
+  </label>
+  @if (control?.errors&&control?.touched) {
+  <div
+    class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-100 dark:bg-gray-800 dark:text-red-400 mt-2"
+    role="alert"
+  >
+    <svg
+      class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+    >
+      <path
+        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+      />
+    </svg>
+    <span class="sr-only">Danger</span>
+    <div>
+      <span class="font-medium">Ensure that these requirements are met:</span>
+      <ul class="mt-1.5 list-disc list-inside">
+        @if (control?.hasError('required')) {
+        <li>required</li>
+        } @if (control?.hasError('maxlength')) {
+        <li>MaxLength</li>
+        } @if (control?.hasError('minlength')) {
+        <li>MinLength</li>
+        } @if (control?.hasError('email')) {
+        <li>email must be valid</li>
+        } @if (control?.hasError('pattern')&&idInput==='phone') {
+        <li>Only Egyption Phone</li>
+        } @if (control?.hasError('pattern')&&idInput==='password') {
+        <li>At Least 8 Numbers</li>
+        } @if (control?.hasError('missmatch')) {
+        <li>Check Confirmation</li>
+        }
+      </ul>
+    </div>
+  </div>
+  }
+</div>

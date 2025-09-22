@@ -1,0 +1,27 @@
+@if (categoryList.length>0) {
+<section>
+  <h2>cat</h2>
+  <div class="container relative p-2">
+    <!-- <span
+      class="pointer-events-none absolute inset-0 border-2 rounded-lg border-[var(--my-color)] shadow-[0_0_6px_var(--my-color),0_0_14px_var(--my-color)]"
+    ></span> -->
+    <h2></h2>
+    <owl-carousel-o [options]="categoryOption">
+      @for (category of categoryList; track category._id) {
+      <ng-template carouselSlide [id]="category._id">
+        <div class="relative justify-center items-center flex flex-col">
+          <img
+            [src]="category.image"
+            style="width: 150px"
+            class="h-[150px] rounded-[50%] shadow-xl"
+            [alt]="category.name"
+          />
+          <h3 class="text-center mt-2">{{ category.name }}</h3>
+        </div>
+      </ng-template>
+      }
+    </owl-carousel-o>
+    <div>Some tags after</div>
+  </div>
+</section>
+}

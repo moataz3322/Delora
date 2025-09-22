@@ -1,0 +1,136 @@
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* Layer خفيف */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* فوق أي عنصر */
+}
+
+.fade-zoom {
+  display: block;
+  animation: fadeZoom 3s ease-in-out forwards;
+  animation-iteration-count: 1; /* الحركة مرة واحدة فقط */
+
+  opacity: 0;
+}
+.main {
+  z-index: 10000;
+}
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  width: 100%;
+}
+i {
+  filter: drop-shadow(0 0 2px var(--my-color));
+  /* animation: shadow 1s infinite ease-in-out; */
+}
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes customLightSpeedInLeft {
+  from {
+    transform: translateX(-100vw) skewX(30deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(20px) skewX(-20deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(-5px) skewX(5deg);
+  }
+  to {
+    transform: translateX(0) skewX(0deg);
+  }
+}
+
+.custom-light-speed {
+  animation: customLightSpeedInLeft 1.5s 1.5s ease-out both;
+}
+
+/* todo spinner  */
+
+.loader {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  top: 42%;
+  left: 45%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  animation: appear 1s 3s ease-in-out forwards;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+}
+
+.loader:before {
+  box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3) inset;
+}
+
+.loader:after {
+  box-shadow: 0 2px 0 var(--my-color) inset;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+/* @keyframes shadow {
+  0% {
+    filter: drop-shadow(0 0 1px var(--my-color));
+  }
+  100% {
+    filter: drop-shadow(0 0 4px var(--my-color));
+  }
+} */
+
+@media (max-width: 640px) {
+  .loader {
+    top: 38%;
+    left: 28%;
+  }
+}

@@ -1,0 +1,319 @@
+<nav
+  class="relative p-1 bg-transparent text-[var(--text-sec-color)] dark:bg-gray-900 z-50"
+>
+  @if (isLandingPage) {
+  <span
+    class="pointer-events-none absolute inset-x-0 bottom-0 h-[2px] bg-[var(--my-color)] shadow-[0_0_6px_var(--my-color),0_0_14px_var(--my-color)]"
+  ></span>
+
+  }
+  <div
+    class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4"
+  >
+    <button
+      data-collapse-toggle="navbar-default"
+      type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      aria-controls="navbar-default"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-5 h-5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"
+        />
+      </svg>
+    </button>
+    <div
+      class="hidden grow w-full md:flex md:justify-between md:w-auto"
+      id="navbar-default"
+    >
+      <a
+        routerLink="/delora"
+        class="flex items-center space-x-3 rtl:space-x-reverse"
+      >
+        <!-- <img src="/images/freshcart-logo.svg" class="h-8" alt="Flowbite Logo" /> -->
+        <span
+          class="self-center text-2xl font-semibold whitespace-nowrap text-[var(--main-color)] dark:text-white"
+          >DealOra</span
+        >
+      </a>
+      @if (islogin) {
+      <ul
+        class="ms-6 font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-4 rtl:space-x-reverse md:mt-0 md:border-0"
+      >
+        <li>
+          <a
+            [class.text-white]="!isLandingPage"
+            routerLinkActive="text-[var(--nav-text)] "
+            routerLink="/home"
+            class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-[var(--nav-text)] transition-colors duration-200 cursor-pointer"
+            aria-current="page"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            [class.text-white]="!isLandingPage"
+            routerLinkActive="text-[var(--nav-text)] "
+            routerLink="/services"
+            class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-[var(--nav-text)] transition-colors duration-200 cursor-pointer"
+            aria-current="page"
+            >Services</a
+          >
+        </li>
+        <li>
+          <a
+            [class.text-white]="!isLandingPage"
+            routerLinkActive="text-[var(--nav-text)]"
+            routerLink="/products"
+            class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-[var(--nav-text)] transition-colors duration-200 cursor-pointer"
+            aria-current="page"
+            >Products</a
+          >
+        </li>
+        <li>
+          <a
+            [class.text-white]="!isLandingPage"
+            routerLinkActive="text-[var(--nav-text)] "
+            routerLink="/about-us"
+            class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-[var(--nav-text)] transition-colors duration-200 cursor-pointer"
+            aria-current="page"
+            >About Us</a
+          >
+        </li>
+        <li>
+          <a
+            [class.text-white]="!isLandingPage"
+            routerLinkActive="text-[var(--nav-text)] "
+            routerLink="/blog"
+            class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-[var(--nav-text)] transition-colors duration-200 cursor-pointer"
+            aria-current="page"
+            >Blog</a
+          >
+        </li>
+        <li>
+          <a
+            [class.text-white]="!isLandingPage"
+            routerLinkActive="text-[var(--nav-text)]"
+            routerLink="/contact-us"
+            class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-[var(--nav-text)] transition-colors duration-200 cursor-pointer---"
+            aria-current="page"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+      }
+      <ul
+        class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-2 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 dark:border-gray-700"
+      >
+        @if (isLandingPage) {
+        <li>
+          <a
+            class="block py-2 px-3 rounded-sm md:p-0 text-[var(--main-color)] transition-colors duration-200 cursor-pointer"
+            aria-current="page"
+            ><svg
+              width="23"
+              height="23"
+              viewBox="0 0 28 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.9953 14.2562L10.7357 21.3597C12.5101 23.2298 15.4899 23.2298 17.2643 21.3597L24.0047 14.2562C26.6651 11.4524 26.6651 6.90659 24.0047 4.10282C21.3443 1.29906 17.0309 1.29906 14.3705 4.10283V4.10283C14.1691 4.3151 13.8309 4.3151 13.6295 4.10283V4.10283C10.9691 1.29906 6.6557 1.29906 3.9953 4.10282C1.3349 6.90659 1.3349 11.4524 3.9953 14.2562Z"
+                stroke="#8B5E35"
+                stroke-width="2.25"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="block py-2 px-3 rounded-sm md:p-0 text-[var(--main-color)] transition-colors duration-200 cursor-pointer"
+            aria-current="page"
+            ><svg
+              width="25"
+              height="25"
+              viewBox="0 0 38 38"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="6.26471"
+                cy="6.26471"
+                r="6.26471"
+                transform="matrix(-1 0 0 1 25.0547 4.69824)"
+                stroke="#8B5E35"
+                stroke-width="2.34926"
+              />
+              <path
+                d="M7.82812 26.5223C7.82812 25.1748 8.6752 23.9728 9.94417 23.5196V23.5196C15.6653 21.4763 21.9174 21.4763 27.6385 23.5196V23.5196C28.9075 23.9728 29.7546 25.1748 29.7546 26.5223V28.5826C29.7546 30.4423 28.1074 31.8709 26.2664 31.6079L24.7716 31.3943C20.8049 30.8277 16.7778 30.8277 12.8111 31.3943L11.3163 31.6079C9.47528 31.8709 7.82812 30.4423 7.82812 28.5826V26.5223Z"
+                stroke="#8B5E35"
+                stroke-width="2.34926"
+              />
+            </svg>
+          </a>
+        </li>
+
+        <li class="relative">
+          <a
+            routerLink="/cart"
+            class="block py-2 px-3 rounded-sm md:p-0 text-[var(--main-color)] hover:text-cyan-500 transition-colors duration-200 cursor-pointer"
+            aria-current="page"
+            ><svg
+              width="25"
+              height="25"
+              viewBox="0 0 38 38"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.13281 4.69824L4.7763 5.02694C6.12634 5.29695 7.1418 6.41684 7.2788 7.78678L7.51811 10.1799M7.51811 10.1799L9.06642 23.0825C9.25534 24.6568 10.5909 25.8416 12.1765 25.8416H26.261C28.7763 25.8416 30.9689 24.1297 31.5789 21.6895L33.3374 14.6557C33.9058 12.3822 32.1862 10.1799 29.8427 10.1799H7.51811Z"
+                stroke="#8B5E35"
+                stroke-width="2.34926"
+                stroke-linecap="round"
+              />
+              <path
+                d="M20.5833 21.375H14.25"
+                stroke="#8B5E35"
+                stroke-width="2.34926"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="13.3141" cy="31.3234" r="2.34926" fill="#8B5E35" />
+              <circle cx="27.4079" cy="31.3234" r="2.34926" fill="#8B5E35" />
+            </svg>
+          </a>
+          <span
+            class="absolute -top-3 right-1 bg-[#8B5E35] rounded-full text-white text-sm"
+            >{{ count() }}</span
+          >
+        </li>
+        }@else {
+        <li>
+          <a
+            class="block py-2 px-3 rounded-sm md:p-0 text-[var(--main-color)] transition-colors duration-200 cursor-pointer"
+            aria-current="page"
+            ><svg
+              width="23"
+              height="23"
+              viewBox="0 0 28 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.9953 14.2562L10.7357 21.3597C12.5101 23.2298 15.4899 23.2298 17.2643 21.3597L24.0047 14.2562C26.6651 11.4524 26.6651 6.90659 24.0047 4.10282C21.3443 1.29906 17.0309 1.29906 14.3705 4.10283V4.10283C14.1691 4.3151 13.8309 4.3151 13.6295 4.10283V4.10283C10.9691 1.29906 6.6557 1.29906 3.9953 4.10282C1.3349 6.90659 1.3349 11.4524 3.9953 14.2562Z"
+                stroke="white"
+                stroke-width="2.25"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="block py-2 px-3 rounded-sm md:p-0 text-[var(--main-color)] transition-colors duration-200 cursor-pointer"
+            aria-current="page"
+            ><svg
+              width="25"
+              height="25"
+              viewBox="0 0 38 38"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="6.26471"
+                cy="6.26471"
+                r="6.26471"
+                transform="matrix(-1 0 0 1 25.0547 4.69824)"
+                stroke="white"
+                stroke-width="2.34926"
+              />
+              <path
+                d="M7.82812 26.5223C7.82812 25.1748 8.6752 23.9728 9.94417 23.5196V23.5196C15.6653 21.4763 21.9174 21.4763 27.6385 23.5196V23.5196C28.9075 23.9728 29.7546 25.1748 29.7546 26.5223V28.5826C29.7546 30.4423 28.1074 31.8709 26.2664 31.6079L24.7716 31.3943C20.8049 30.8277 16.7778 30.8277 12.8111 31.3943L11.3163 31.6079C9.47528 31.8709 7.82812 30.4423 7.82812 28.5826V26.5223Z"
+                stroke="white"
+                stroke-width="2.34926"
+              />
+            </svg>
+          </a>
+        </li>
+
+        <li class="relative">
+          <a
+            routerLink="/cart"
+            class="block py-2 px-3 rounded-sm md:p-0 text-[var(--main-color)] hover:text-cyan-500 transition-colors duration-200 cursor-pointer"
+            aria-current="page"
+            ><svg
+              width="25"
+              height="25"
+              viewBox="0 0 38 38"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.13281 4.69824L4.7763 5.02694C6.12634 5.29695 7.1418 6.41684 7.2788 7.78678L7.51811 10.1799M7.51811 10.1799L9.06642 23.0825C9.25534 24.6568 10.5909 25.8416 12.1765 25.8416H26.261C28.7763 25.8416 30.9689 24.1297 31.5789 21.6895L33.3374 14.6557C33.9058 12.3822 32.1862 10.1799 29.8427 10.1799H7.51811Z"
+                stroke="white"
+                stroke-width="2.34926"
+                stroke-linecap="round"
+              />
+              <path
+                d="M20.5833 21.375H14.25"
+                stroke="white"
+                stroke-width="2.34926"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="13.3141" cy="31.3234" r="2.34926" fill="white" />
+              <circle cx="27.4079" cy="31.3234" r="2.34926" fill="white" />
+            </svg>
+          </a>
+          <span
+            class="absolute -top-3 right-1 bg-[#8B5E35] rounded-full text-white text-sm"
+            >{{ count() }}</span
+          >
+        </li>
+        } @if (islogin === false) {
+        <li>
+          <a
+            routerLink="/login"
+            class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-cyan-500 transition-colors duration-200 cursor-pointer"
+            aria-current="page"
+            >Login</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/register"
+            class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-cyan-500 transition-colors duration-200 cursor-pointer"
+            aria-current="page"
+            >Register</a
+          >
+        </li>
+        } @else {
+        <li>
+          <!-- <a
+            (click)="signOut()"
+            class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-cyan-500 transition-colors duration-200 cursor-pointer main-inputs"
+            aria-current="page"
+            >Signout</a
+          >
+        </li> -->
+        </li>
+
+        }
+      </ul>
+    </div>
+    @if (islogin===true) {
+    <button class="main-btn p-2" (click)="signOut()">SignOut</button>
+    }
+  </div>
+</nav>

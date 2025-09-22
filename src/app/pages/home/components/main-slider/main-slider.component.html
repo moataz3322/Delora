@@ -1,0 +1,60 @@
+<section class="p-1 my-10 relative">
+  <!-- <span
+    class="pointer-events-none absolute inset-0 border-2 rounded-lg border-[var(--my-color)] shadow-[0_0_6px_var(--my-color),0_0_14px_var(--my-color)]"
+  ></span> -->
+  <owl-carousel-o [options]="MainSlider">
+    <ng-template carouselSlide>
+      <div
+        class="w-full h-[50vh] sm:h-[60vh] md:h-[80vh] overflow-hidden relative"
+      >
+        <img
+          src="/images/1.jpg"
+          class="absolute top-0 left-0 -translate-x-0 -translate-y-[38%] w-full"
+          alt="slider"
+        />
+        <div><span class="absolute inset-0 bg-black/50"></span></div>
+        <div class="absolute bottom-20 left-20 w-1/3">
+          <figcaption class="text-white">
+            <h3 class="md:text-[44px]">Upgrade your Style</h3>
+            <span class="md:text-[32px]"
+              >up to 50% off on all clothing and accessories!</span
+            >
+          </figcaption>
+          <button class="main-btn">ShopNow</button>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="w-full h-[50vh] sm:h-[60vh] md:h-[80vh]">
+        <img src="/images/img1.avif" class="w-full h-full" alt="slider" />
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="w-full h-[50vh] sm:h-[60vh] md:h-[80vh]">
+        <img src="/images/img2.avif" class="w-full h-full" alt="slider" />
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="w-full h-[50vh] sm:h-[60vh] md:h-[80vh]">
+        <img src="/images/img3.avif" class="w-full h-full" alt="slider" />
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="w-full h-[50vh] sm:h-[60vh] md:h-[80vh]">
+        <img src="/images/img4.avif" class="w-full h-full" alt="slider" />
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="w-full h-[50vh] sm:h-[60vh] md:h-[80vh]">
+        <img src="/images/img5.avif" class="w-full h-full" alt="slider" />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="w-full h-[50vh] sm:h-[60vh] md:h-[80vh]">
+        <img src="/images/img7.avif" class="w-full h-full" alt="slider" />
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</section>

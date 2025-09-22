@@ -1,0 +1,184 @@
+<section class="main-section p-0 m-0 rounded-none h-screen border-0">
+  <div class="grid grid-cols-12">
+    <div class="col-span-6 p-20 my-10 w-[80%] mx-auto">
+      <figcaption>
+        <h2 class="">Welcome Back</h2>
+        <span class="text-[var(--text-sec-color)]"
+          >Please Login or Signup to Continue to ur App</span
+        >
+      </figcaption>
+
+      <form
+        class="space-y-5 my-5"
+        [formGroup]="loginForm"
+        (ngSubmit)="loginSubmit()"
+      >
+        <div>
+          <app-input
+            [control]="loginForm.get('email')"
+            typeInput="email"
+            placeholderInput="YourEmail"
+            idInput="email"
+          ></app-input>
+        </div>
+        <div class="sm:w-full">
+          <app-input
+            [control]="loginForm.get('password')"
+            [typeInput]="'password'"
+            [placeholderInput]="'Password'"
+            [idInput]="'password'"
+          ></app-input>
+        </div>
+        <div class="flex justify-between px-5">
+          <div>
+            <div class="flex items-center mb-4">
+              <input
+                id="default-checkbox"
+                type="checkbox"
+                value=""
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="default-checkbox"
+                class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >Remember Me</label
+              >
+            </div>
+          </div>
+          <a routerLink="/forgetpassword" class="main-link">Forget Password?</a>
+        </div>
+        @if (errorMessage) {
+        <div role="alert" class="alert alert-error alert-soft justify-center">
+          <span class="text-xl">{{ errorMessage }}</span>
+        </div>
+        }
+        <div class="">
+          <button
+            class="main-btn my-5 px-9 gap-2 flex items-center h-12 w-full mx-auto"
+            type="submit"
+          >
+            <span [class.hidden]="isLoading">Login</span>
+            <span
+              class="loading loading-dots loading-xl"
+              [class.hidden]="!isLoading"
+            ></span>
+          </button>
+        </div>
+        <!-- todo svg icon -->
+        <div class="text-center">
+          <span class="text-[var(--text-sec-color)]">Or Continue With</span>
+          <div class="flex justify-center space-x-2 my-3">
+            <div class="cursor-pointer">
+              <svg
+                width="33"
+                height="32"
+                viewBox="0 0 33 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_6_15031)">
+                  <rect x="0.5" width="32" height="32" rx="16" fill="#FFFDFD" />
+                  <g clip-path="url(#clip1_6_15031)">
+                    <path
+                      d="M11.1468 1.05274C7.94946 2.16191 5.19211 4.26716 3.27973 7.05924C1.36735 9.85133 0.400732 13.1831 0.52186 16.5652C0.642987 19.9472 1.84547 23.2013 3.9527 25.8494C6.05992 28.4975 8.9608 30.4001 12.2293 31.2777C14.8791 31.9615 17.6553 31.9915 20.3193 31.3652C22.7325 30.8232 24.9637 29.6637 26.7943 28.0002C28.6995 26.2161 30.0823 23.9464 30.7943 21.4352C31.5681 18.7044 31.7057 15.8326 31.1968 13.0402H16.3168V19.2127H24.9343C24.762 20.1972 24.393 21.1368 23.8491 21.9753C23.3053 22.8138 22.5979 23.534 21.7693 24.0927C20.717 24.7888 19.5307 25.2572 18.2868 25.4677C17.0391 25.6997 15.7594 25.6997 14.5118 25.4677C13.2472 25.2063 12.051 24.6844 10.9993 23.9352C9.30962 22.7392 8.04094 21.0401 7.37425 19.0802C6.69629 17.0837 6.69629 14.9193 7.37425 12.9227C7.84882 11.5233 8.63334 10.2491 9.66925 9.19524C10.8547 7.96711 12.3556 7.08923 14.0071 6.65793C15.6587 6.22663 17.3972 6.25857 19.0318 6.75024C20.3087 7.14222 21.4764 7.82708 22.4418 8.75024C23.4134 7.78357 24.3834 6.81441 25.3518 5.84274C25.8518 5.32024 26.3968 4.82274 26.8893 4.28774C25.4157 2.91643 23.686 1.84938 21.7993 1.14774C18.3635 -0.099786 14.6042 -0.133312 11.1468 1.05274Z"
+                      fill="#FFFDFD"
+                    />
+                    <path
+                      d="M11.1489 1.05249C14.6061 -0.134368 18.3654 -0.101725 21.8014 1.14499C23.6884 1.8514 25.4174 2.92358 26.8889 4.29999C26.3889 4.83499 25.8614 5.33499 25.3514 5.85499C24.3814 6.82332 23.4122 7.78832 22.4439 8.74999C21.4785 7.82683 20.3108 7.14197 19.0339 6.74999C17.3998 6.25659 15.6615 6.22281 14.0095 6.65235C12.3575 7.08188 10.8557 7.95814 9.66891 9.18499C8.63299 10.2388 7.84847 11.513 7.37391 12.9125L2.19141 8.89999C4.04643 5.22139 7.25828 2.40755 11.1489 1.05249Z"
+                      fill="#E33629"
+                    />
+                    <path
+                      d="M0.813899 12.8749C1.09245 11.4944 1.55491 10.1575 2.1889 8.8999L7.3714 12.9224C6.69344 14.9189 6.69344 17.0834 7.3714 19.0799C5.64473 20.4132 3.91723 21.7532 2.1889 23.0999C0.601776 19.9407 0.117731 16.3412 0.813899 12.8749Z"
+                      fill="#F8BD00"
+                    />
+                    <path
+                      d="M16.3175 13.0376H31.1975C31.7065 15.8299 31.5688 18.7018 30.795 21.4326C30.0831 23.9438 28.7002 26.2135 26.795 27.9976C25.1225 26.6926 23.4425 25.3976 21.77 24.0926C22.5992 23.5333 23.3069 22.8123 23.8508 21.9729C24.3946 21.1335 24.7634 20.193 24.935 19.2076H16.3175C16.315 17.1526 16.3175 15.0951 16.3175 13.0376Z"
+                      fill="#587DBD"
+                    />
+                    <path
+                      d="M2.1875 23.1001C3.91583 21.7667 5.64333 20.4267 7.37 19.0801C8.03802 21.0406 9.30851 22.7398 11 23.9351C12.055 24.6807 13.2538 25.1984 14.52 25.4551C15.7676 25.6871 17.0474 25.6871 18.295 25.4551C19.539 25.2445 20.7252 24.7762 21.7775 24.0801C23.45 25.3851 25.13 26.6801 26.8025 27.9851C24.9722 29.6494 22.741 30.8098 20.3275 31.3526C17.6635 31.9788 14.8873 31.9488 12.2375 31.2651C10.1418 30.7055 8.18419 29.7191 6.4875 28.3676C4.69165 26.9418 3.22489 25.145 2.1875 23.1001Z"
+                      fill="#319F43"
+                    />
+                  </g>
+                </g>
+                <defs>
+                  <clipPath id="clip0_6_15031">
+                    <rect x="0.5" width="32" height="32" rx="16" fill="white" />
+                  </clipPath>
+                  <clipPath id="clip1_6_15031">
+                    <rect width="32" height="32" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div class="cursor-pointer">
+              <svg
+                width="33"
+                height="32"
+                viewBox="0 0 33 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_6_15038)">
+                  <path
+                    d="M32.5 16C32.5 7.1635 25.3365 0 16.5 0C7.6635 0 0.5 7.1635 0.5 16C0.5 23.986 6.351 30.6054 14 31.8056V20.625H9.9375V16H14V12.475C14 8.465 16.3888 6.25 20.0435 6.25C21.794 6.25 23.625 6.5625 23.625 6.5625V10.5H21.6075C19.6199 10.5 19 11.7334 19 12.9987V16H23.4375L22.7281 20.625H19V31.8056C26.649 30.6054 32.5 23.9861 32.5 16Z"
+                    fill="#1877F2"
+                  />
+                  <path
+                    d="M22.7281 20.625L23.4375 16H19V12.9987C19 11.7332 19.6199 10.5 21.6075 10.5H23.625V6.5625C23.625 6.5625 21.794 6.25 20.0434 6.25C16.3888 6.25 14 8.465 14 12.475V16H9.9375V20.625H14V31.8056C14.827 31.9352 15.6629 32.0002 16.5 32C17.3371 32.0002 18.173 31.9352 19 31.8056V20.625H22.7281Z"
+                    fill="#FFFDFD"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_6_15038">
+                    <rect
+                      width="32"
+                      height="32"
+                      fill="white"
+                      transform="translate(0.5)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div class="cursor-pointer">
+              <svg
+                width="31"
+                height="32"
+                viewBox="0 0 31 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M25.4957 30.7161C23.5573 32.4048 21.4409 32.1382 19.4036 31.3383C17.2476 30.5206 15.2696 30.485 12.995 31.3383C10.1467 32.4403 8.64345 32.1204 6.9424 30.7161C-2.71009 21.775 -1.28595 8.15897 9.67199 7.66126C12.3423 7.78568 14.2015 8.97664 15.7641 9.0833C18.0981 8.65668 20.3332 7.43017 22.8255 7.59015C25.8122 7.80346 28.0671 8.86999 29.5506 10.7897C23.3793 14.1138 24.843 21.4195 30.5 23.4637C29.3726 26.13 27.9089 28.7786 25.476 30.7339L25.4957 30.7161ZM15.5663 7.5546C15.2696 3.59066 18.8498 0.31996 22.9639 0C23.5376 4.58609 18.3355 7.99899 15.5663 7.5546Z"
+                  fill="#222222"
+                />
+              </svg>
+            </div>
+          </div>
+          <span class="text-[var(--text-sec-color)]"
+            >Don't have an Account
+            <a routerLink="/register" class="main-link">SignUp</a></span
+          >
+        </div>
+      </form>
+    </div>
+    <div class="col-span-6">
+      <div class="relative">
+        <img
+          src="/images/unsplash_SXck496Sg54.png"
+          class="w-full h-screen"
+          alt=""
+        />
+        <div class="absolute bottom-20 left-1/2 -translate-1/2 md:w-1/2">
+          <figcaption class="text-white space-y-4 text-center">
+            <h3 class="text-bold">Welcome To Delora</h3>
+            <div class="md:w-10/12">
+              <span>Discover The Latest Trends ,Express Your Unique Style</span>
+            </div>
+          </figcaption>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+<div
+  class="cursor-pointer card shadow-sm bg-[var(--card-bg)] border-1 border-white relative md:max-w-[300px]"
+>
+  <!-- <span
+    class="pointer-events-none absolute inset-0 border-2 rounded-lg border-[var(--my-color)] shadow-[0_0_6px_var(--my-color),0_0_14px_var(--my-color)]"
+  ></span> -->
+  <div class="p-2" [routerLink]="['/details', product._id, product.slug]">
+    <figure class="relative bg-gray-100 rounded-lg">
+      <div class="w-4/5">
+        <img
+          src="{{ product.imageCover }}"
+          class="md:h-[300px] md:w-full"
+          alt="Shoes"
+        />
+      </div>
+      <div
+        class="badge badge-secondary bg-[var(--info)] text-white absolute left-2 bottom-20 border-0 rounded-sm"
+      >
+        -%50
+      </div>
+    </figure>
+  </div>
+  <div class="card-body rounded-md">
+    <h2 class="card-title">
+      {{ product.title.split(" ").slice(0, 2).join(" ") }}
+      <div class="badge badge-secondary text-white bg-green-300 border-0">
+        NEW
+      </div>
+    </h2>
+    <p>
+      <i class="fa-solid fa-star text-yellow-300"></i
+      >{{ product.ratingsAverage }}
+    </p>
+    <div class="card-actions justify-between">
+      <div class="mt-2">
+        <span class="text-2xl price text-black"> {{ product.price }},00 </span>
+        <span class="line-through text-red-500"
+          ><span class="text-[var(--text-sec-color)]">10000</span></span
+        >
+      </div>
+      <!-- <div class="badge badge-outline">Products</div> -->
+      <button
+        (click)="addProductToCard(product._id)"
+        class="btn btn-soft btn-primary ms-2"
+      >
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+  </div>
+</div>

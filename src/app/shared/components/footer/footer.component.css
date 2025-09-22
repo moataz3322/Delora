@@ -1,0 +1,22 @@
+input {
+  width: 80%;
+}
+.f {
+  width: 100%;
+}
+.icon-parent li :hover i {
+  transition: 0.8s;
+  transform: scale(1.5) rotateY(360deg);
+}
+
+ul li span {
+  display: inline-block;
+}
+ul li:hover span:not(.brand) {
+  position: relative;
+  /* color: oklch(58% 0.233 277.117); */
+  color: var(--second-color);
+  cursor: pointer;
+  transition: 0.2s;
+  transform: scale(1.1);
+}

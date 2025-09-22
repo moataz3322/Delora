@@ -1,0 +1,21 @@
+::ng-deep.owl-theme .owl-nav {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: -23%;
+  left: 0px;
+  transform: translateY(-220%);
+  width: 100%;
+}
+
+::ng-deep.owl-theme .owl-nav [class*="owl-"] {
+  padding: 13px !important;
+  border-radius: 50%;
+  background-color: white;
+  color: var(--second-color);
+  border: 1px var(--second-color) solid;
+}
+::ng-deep.owl-theme .owl-nav [class*="owl-"]:hover {
+  background-color: white;
+  color: var(--second-color);
+}

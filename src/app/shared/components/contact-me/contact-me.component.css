@@ -1,0 +1,4 @@
+input:focus {
+  border-color: var(--my-color) !important;
+  outline: none !important;
+}

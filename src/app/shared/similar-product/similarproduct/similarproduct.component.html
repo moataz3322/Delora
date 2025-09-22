@@ -1,0 +1,90 @@
+<div class="grid grid-cols-12 md:grid-cols-8 md:gap-2 w-fit mx-auto">
+  @for (product of products; track $index) {
+  <div
+    class="col-span-6 md:col-span-2 max-w-sm bg-white border-gray-200 rounded-lg shadow-sm border-0 dark:bg-gray-800 dark:border-gray-700 p-2 md:w-[350px] md:h-[409]"
+  >
+    <div class="relative bg-gray-100 rounded-xl">
+      <div class="px-6">
+        <img class="w-full" [src]="product.image" alt="" />
+      </div>
+      <div
+        class="badge badge-secondary bg-[var(--main-color)] text-white absolute left-2 bottom-20 border-0 rounded-sm"
+      >
+        -%50
+      </div>
+      <div>
+        <button
+          (click)="toggleFav(product)"
+          class="absolute right-5 top-5 border-0 rounded-full bg-white p-2 cursor-pointer"
+        >
+          @if (!product.isFav) {
+          <svg
+            width="28"
+            height="24"
+            viewBox="0 0 28 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.9953 14.2562L10.7357 21.3597C12.5101 23.2298 15.4899 23.2298 17.2643 21.3597L24.0047 14.2562C26.6651 11.4524 26.6651 6.90659 24.0047 4.10282C21.3443 1.29906 17.0309 1.29906 14.3705 4.10283V4.10283C14.1691 4.3151 13.8309 4.3151 13.6295 4.10283V4.10283C10.9691 1.29906 6.6557 1.29906 3.9953 4.10282C1.3349 6.90659 1.3349 11.4524 3.9953 14.2562Z"
+              stroke="#8B5E35"
+              stroke-width="2.25"
+            />
+          </svg>
+          }@else {
+          <svg
+            width="28"
+            height="24"
+            viewBox="0 0 28 24"
+            fill="#8B5E35"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.9953 14.2562L10.7357 21.3597C12.5101 23.2298 15.4899 23.2298 17.2643 21.3597L24.0047 14.2562C26.6651 11.4524 26.6651 6.90659 24.0047 4.10282C21.3443 1.29906 17.0309 1.29906 14.3705 4.10283V4.10283C14.1691 4.3151 13.8309 4.3151 13.6295 4.10283V4.10283C10.9691 1.29906 6.6557 1.29906 3.9953 4.10282C1.3349 6.90659 1.3349 11.4524 3.9953 14.2562Z"
+              stroke="#8B5E35"
+              stroke-width="2.25"
+            />
+          </svg>
+          }
+        </button>
+      </div>
+    </div>
+    <div class="p-5">
+      <a href="#">
+        <h5
+          class="mb-2 text-2xl font-bold tracking-tight text-[var(--text-color)] dark:text-white"
+        >
+          {{ product.title }}
+        </h5>
+      </a>
+      <!-- <h2 class="mb-3 font-normal text-gray-700 dark:text-gray-400">skirts</h2> -->
+      <div>
+        <p>
+          <i class="fa-solid fa-star text-yellow-300"></i
+          ><span class="text-black"
+            >{{ product.rating }}
+            <span class="text-[var(--text-sec-color)] text-sm"
+              >(+500)</span
+            ></span
+          >
+        </p>
+        <div class="card-actions justify-between">
+          <div class="mt-2">
+            <span class="text-2xl price text-[var(--main-color)]"
+              >{{ product.price }}
+            </span>
+            <span class="line-through text-red-500"
+              ><span class="text-[var(--text-sec-color)]">10000</span></span
+            >
+          </div>
+          <button
+            class="btn btn-soft btn-primary rounded-xl p-3 ms-2 bg-[var(--main-color)] text-white border-0 shadow-none hover:bg-[var(--second-color)]"
+          >
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>

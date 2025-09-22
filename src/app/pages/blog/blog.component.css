@@ -1,0 +1,12 @@
+:root {
+  --body-bg: oklch(98% 0.01 240);
+  --nav-footer-bg: oklch(40% 0.12 260);
+  --section-bg: oklch(96% 0.03 250);
+  --card-bg: oklch(100% 0 0);
+  --text-color: oklch(20% 0.02 250);
+  --header-color: oklch(30% 0.08 260);
+  --button-bg: oklch(60% 0.15 250);
+  --button-hover: oklch(55% 0.18 250);
+  --input-bg: oklch(100% 0 0);
+  --input-border: oklch(80% 0.05 250);
+}
