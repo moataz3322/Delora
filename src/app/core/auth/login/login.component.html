@@ -1,6 +1,23 @@
-<section class="main-section p-0 m-0 rounded-none h-screen border-0">
+<section class="main-section p-0 m-0 rounded-none border-0">
   <div class="grid grid-cols-12">
-    <div class="col-span-6 p-20 my-10 w-[80%] mx-auto">
+    <div class="col-span-12 md:col-span-6">
+      <div class="relative">
+        <img
+          src="/images/unsplash_SXck496Sg54.png"
+          class="w-full md:h-screen"
+          alt=""
+        />
+        <div class="absolute bottom-20 left-1/2 -translate-1/2 md:w-1/2">
+          <figcaption class="text-white space-y-4 text-center">
+            <h3 class="text-bold">Welcome To Delora</h3>
+            <div class="md:w-10/12">
+              <span>Discover The Latest Trends ,Express Your Unique Style</span>
+            </div>
+          </figcaption>
+        </div>
+      </div>
+    </div>
+    <div class="col-span-12 md:col-span-6 md:w-[80%] h-full my-10 mx-auto">
       <figcaption>
         <h2 class="text-[32px] text-[var(--text-color)] text-bold">
           Welcome Back
@@ -23,7 +40,7 @@
             idInput="email"
           ></app-input>
         </div>
-        <div class="sm:w-full">
+        <div class="">
           <app-input
             [control]="loginForm.get('password')"
             [typeInput]="'password'"
@@ -164,23 +181,6 @@
           >
         </div>
       </form>
-    </div>
-    <div class="col-span-6">
-      <div class="relative">
-        <img
-          src="/images/unsplash_SXck496Sg54.png"
-          class="w-full h-screen"
-          alt=""
-        />
-        <div class="absolute bottom-20 left-1/2 -translate-1/2 md:w-1/2">
-          <figcaption class="text-white space-y-4 text-center">
-            <h3 class="text-bold">Welcome To Delora</h3>
-            <div class="md:w-10/12">
-              <span>Discover The Latest Trends ,Express Your Unique Style</span>
-            </div>
-          </figcaption>
-        </div>
-      </div>
     </div>
   </div>
 </section>

@@ -14,7 +14,7 @@ import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-forgetpassword',
-  imports: [InputComponent, ReactiveFormsModule],
+  imports: [InputComponent, ReactiveFormsModule, RouterLink],
   templateUrl: './forgetpassword.component.html',
   styleUrl: './forgetpassword.component.css',
 })
