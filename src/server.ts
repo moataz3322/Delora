@@ -38,10 +38,6 @@ app.use(
 /**
  * Handle all other requests by rendering the Angular application.
  */
-app.get(['/checkout/:id', '/details/:id/:slug', '/details/:id'], (req, res) => {
-  // نرسل ملف الـ index.html مباشرة من الـ browser build
-  res.sendFile(join(browserDistFolder, 'index.html'));
-});
 app.use((req, res, next) => {
   angularApp
     .handle(req)
