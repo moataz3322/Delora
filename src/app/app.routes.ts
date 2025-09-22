@@ -53,20 +53,17 @@ export const routes: Routes = [
         path: 'checkout/:id',
         component: CheckoutComponent,
         title: 'Checkout',
-        data: { prerender: false },
       },
       { path: 'products', component: ProductsComponent, title: 'Products' },
       {
         path: 'details/:id/:slug',
         component: DetailsComponent,
         title: 'Details',
-        data: { prerender: false },
       },
       {
         path: 'details/:id',
         component: DetailsComponent,
         title: 'Details',
-        data: { prerender: false },
       },
 
       { path: 'cart', component: CartComponent, title: 'Cart' },
