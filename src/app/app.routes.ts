@@ -49,14 +49,25 @@ export const routes: Routes = [
       { path: 'blog', component: BlogComponent, title: 'Blog' },
       { path: 'contact-us', component: ContactusComponent },
       { path: 'allorders', component: AllordersComponent, title: 'Allorders' },
-      { path: 'checkout/:id', component: CheckoutComponent, title: 'Checkout' },
+      {
+        path: 'checkout/:id',
+        component: CheckoutComponent,
+        title: 'Checkout',
+        data: { prerender: false },
+      },
       { path: 'products', component: ProductsComponent, title: 'Products' },
       {
         path: 'details/:id/:slug',
         component: DetailsComponent,
         title: 'Details',
+        data: { prerender: false },
       },
-      { path: 'details/:id', component: DetailsComponent, title: 'Details' },
+      {
+        path: 'details/:id',
+        component: DetailsComponent,
+        title: 'Details',
+        data: { prerender: false },
+      },
 
       { path: 'cart', component: CartComponent, title: 'Cart' },
     ],
