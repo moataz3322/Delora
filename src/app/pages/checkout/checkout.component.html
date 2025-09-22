@@ -3,15 +3,15 @@
   <form [formGroup]="checkOutForm" class="space-y-5">
     <div>
       <app-input
+        [typeInput]="'text'"
         [control]="checkOutForm.get('shippingadress')?.get('details')"
-        [element]="'text'"
-        [idInput]="'hello'"
-        [placeholderInput]="'hello'"
+        [idInput]="'YourName'"
+        [placeholderInput]="'YourName'"
       ></app-input>
     </div>
     <div>
       <app-input
-        [typeInput]="'text'"
+        [typeInput]="'tel'"
         [placeholderInput]="'phone'"
         [idInput]="'phone'"
         [labelInput]="'phone'"
@@ -20,9 +20,9 @@
     </div>
     <div>
       <app-input
+        [idInput]="'city'"
         [typeInput]="'text'"
         [placeholderInput]="'city'"
-        [idInput]="'city'"
         [labelInput]="'city'"
         [control]="checkOutForm.get('shippingadress')?.get('city')"
       ></app-input>
