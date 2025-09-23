@@ -2,3 +2,8 @@ input:focus {
   border-color: var(--my-color) !important;
   outline: none !important;
 }
+
+textarea .floating-label > span {
+  background-color: #f6f6f6 !important;
+  color: var(--main-color);
+}
