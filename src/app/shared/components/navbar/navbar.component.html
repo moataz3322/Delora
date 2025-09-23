@@ -1,4 +1,4 @@
-<nav class="relative p-1 bg-transparent text-[var(--text-sec-color)] z-50">
+<nav class="relative p-1 md:bg-transparent text-[var(--text-sec-color)] z-50">
   @if (isLandingPage) {
   <span
     class="pointer-events-none absolute inset-x-0 bottom-0 h-[2px] bg-[var(--my-color)] shadow-[0_0_6px_var(--my-color),0_0_14px_var(--my-color)]"
@@ -52,7 +52,7 @@
       >
         <li>
           <a
-            [class.text-white]="!isLandingPage"
+            [class.md:text-white]="!isLandingPage"
             routerLinkActive="text-[var(--nav-text)] "
             routerLink="/home"
             class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-[var(--nav-text)] transition-colors duration-200 cursor-pointer"
@@ -62,7 +62,7 @@
         </li>
         <li>
           <a
-            [class.text-white]="!isLandingPage"
+            [class.md:text-white]="!isLandingPage"
             routerLinkActive="text-[var(--nav-text)] "
             routerLink="/services"
             class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-[var(--nav-text)] transition-colors duration-200 cursor-pointer"
@@ -72,7 +72,7 @@
         </li>
         <li>
           <a
-            [class.text-white]="!isLandingPage"
+            [class.md:text-white]="!isLandingPage"
             routerLinkActive="text-[var(--nav-text)]"
             routerLink="/products"
             class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-[var(--nav-text)] transition-colors duration-200 cursor-pointer"
@@ -82,7 +82,7 @@
         </li>
         <li>
           <a
-            [class.text-white]="!isLandingPage"
+            [class.md:text-white]="!isLandingPage"
             routerLinkActive="text-[var(--nav-text)] "
             routerLink="/about-us"
             class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-[var(--nav-text)] transition-colors duration-200 cursor-pointer"
@@ -92,7 +92,7 @@
         </li>
         <li>
           <a
-            [class.text-white]="!isLandingPage"
+            [class.md:text-white]="!isLandingPage"
             routerLinkActive="text-[var(--nav-text)] "
             routerLink="/blog"
             class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-[var(--nav-text)] transition-colors duration-200 cursor-pointer"
@@ -102,7 +102,7 @@
         </li>
         <li>
           <a
-            [class.text-white]="!isLandingPage"
+            [class.md:text-white]="!isLandingPage"
             routerLinkActive="text-[var(--nav-text)]"
             routerLink="/contact-us"
             class="block py-2 px-3 rounded-sm md:p-0 text-grey-600 hover:text-[var(--nav-text)] transition-colors duration-200 cursor-pointer---"
@@ -113,7 +113,7 @@
       </ul>
       }
       <ul
-        class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-2 rtl:space-x-reverse md:mt-0 md:border-0"
+        class="font-medium flex flex-col p-4 ms-5 md:ms-0 md:p-0 space-y-2 md:space-y-0 my-2 border-0 rounded-lg md:flex-row md:space-x-2 rtl:space-x-reverse md:mt-0 md:border-0"
       >
         @if (isLandingPage) {
         <li>
@@ -200,7 +200,7 @@
         }@else {
         <li>
           <a
-            class="block py-2 px-3 rounded-sm md:p-0 text-[var(--main-color)] transition-colors duration-200 cursor-pointer"
+            class="block p-1 md:p-0 text-[var(--main-color)] transition-colors duration-200 cursor-pointer bg-[var(--main-color)] rounded-full w-fit md:bg-transparent"
             aria-current="page"
             ><svg
               width="23"
@@ -219,7 +219,7 @@
         </li>
         <li>
           <a
-            class="block py-2 px-3 rounded-sm md:p-0 text-[var(--main-color)] transition-colors duration-200 cursor-pointer"
+            class="block p-1 md:p-0 text-[var(--main-color)] transition-colors duration-200 cursor-pointer bg-[var(--main-color)] rounded-full w-fit md:bg-transparent"
             aria-current="page"
             ><svg
               width="25"
@@ -248,7 +248,7 @@
         <li class="relative">
           <a
             routerLink="/cart"
-            class="block py-2 px-3 rounded-sm md:p-0 text-[var(--main-color)] hover:text-cyan-500 transition-colors duration-200 cursor-pointer"
+            class="block p-1 md:p-0 text-[var(--main-color)] hover:text-cyan-500 transition-colors duration-200 cursor-pointer bg-[var(--main-color)] rounded-full w-fit md:bg-transparent"
             aria-current="page"
             ><svg
               width="25"
@@ -275,7 +275,7 @@
             </svg>
           </a>
           <span
-            class="absolute -top-3 right-1 bg-[#8B5E35] rounded-full text-white text-sm"
+            class="absolute top-0 left-7 md:-top-4 md:left-2 bg-[#8B5E35] rounded-full text-white text-sm"
             >{{ count() }}</span
           >
         </li>
