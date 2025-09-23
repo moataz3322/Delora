@@ -23,7 +23,9 @@
   <div class="card-body rounded-md">
     <h2 class="card-title">
       {{ product.title.split(" ").slice(0, 2).join(" ") }}
-      <div class="badge badge-secondary text-white bg-green-300 border-0">
+      <div
+        class="badge badge-secondary text-white bg-[var(--second-color)] border-0"
+      >
         NEW
       </div>
     </h2>
@@ -39,10 +41,7 @@
         >
       </div>
       <!-- <div class="badge badge-outline">Products</div> -->
-      <button
-        (click)="addProductToCard(product._id)"
-        class="btn btn-soft btn-primary ms-2"
-      >
+      <button (click)="addProductToCard(product._id)" class="main-btn">
         <i class="fa-solid fa-plus"></i>
       </button>
     </div>

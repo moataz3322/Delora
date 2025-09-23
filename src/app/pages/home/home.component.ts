@@ -9,17 +9,18 @@ import { ChekclandingpageService } from '../../shared/components/navbar/chekclan
 import { TrendcatComponent } from './components/trendCat/trendcat/trendcat.component';
 import { ServicesComponent } from '../services/services.component';
 import { ContactMeComponent } from '../../shared/components/contact-me/contact-me.component';
+import { BrandLoaderComponent } from '../../shared/brand-loader/brand-loader.component';
 
 @Component({
   selector: 'app-home',
   imports: [
     CardComponent,
     MainSliderComponent,
-
     SimilarproductComponent,
     TrendcatComponent,
     ServicesComponent,
     ContactMeComponent,
+    BrandLoaderComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

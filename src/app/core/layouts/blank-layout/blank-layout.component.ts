@@ -32,6 +32,6 @@ export class BlankLayoutComponent implements OnInit {
         document.body.style.overflow = 'auto';
       }
       // this.loadCheck = false;
-    }, 4500);
+    }, 1500);
   }
 }

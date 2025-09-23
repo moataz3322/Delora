@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { ProductsService } from '../../core/services/products/products.service';
 import { CardComponent } from '../../shared/components/card/card.component';
-import { NgxPaginationModule } from 'ngx-pagination'; // <-- import the module
+import { NgxPaginationModule } from 'ngx-pagination';
+import { TrendcatComponent } from '../home/components/trendCat/trendcat/trendcat.component'; // <-- import the module
 
 @Component({
   selector: 'app-products',
-  imports: [CardComponent, NgxPaginationModule],
+  imports: [CardComponent, NgxPaginationModule, TrendcatComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
 })

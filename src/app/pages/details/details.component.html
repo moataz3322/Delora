@@ -1,5 +1,412 @@
-<section class="my-10 text-white">
-  <h2>{{ productList.title }}</h2>
-  <img [src]="productList.imageCover" [alt]="productList.title" />
-  <h3>lol</h3>
+<section class="my-10 text-white main-section">
+  <div class="grid grid-cols-12">
+    <div class="col-span-6">
+      <img [src]="productList.imageCover" [alt]="productList.title" />
+    </div>
+    <div
+      class="col-span-12 md:col-span-4 space-y-8 main-section text-black bg-white h-fit"
+    >
+      <h3 class="text-[var(--text-color)] text-[24px]">Product Details</h3>
+      <figcaption class="text-center">
+        <h3 class="text-[32px] text-[var(--text-color)]">
+          {{ productList.title }}
+        </h3>
+      </figcaption>
+      <div class="flex justify-between">
+        <div class="space-y-5 text-[var(--text-color)]">
+          <h3>Price:</h3>
+          <p>Brand</p>
+          <P>Category</P>
+          <p>Discount</p>
+          <p>Shipping:</p>
+          <p>Coupon Applied:</p>
+        </div>
+        <div class="space-y-5 text-[var(--text-color)]">
+          <p>{{ productList.price }}EGP</p>
+          <p>{{ productList.brand.name }}</p>
+          <p>{{ productList.category.name }}</p>
+          <p>50 EGP</p>
+          <p class="text-[var(--main-color)]">Free</p>
+          <p class="text-[var(--main-color)]">0.00 EGP</p>
+        </div>
+      </div>
+      <hr class="w-[80%] m-auto" />
+      <!-- <figcaption class="flex justify-between mt-5">
+        <div class="space-y-5">
+          <p>TOTAL:</p>
+          <p>Estimated Delivery By</p>
+        </div>
+        <div class="space-y-5">
+          <p>EGP</p>
+          <p></p>
+        </div>
+      </figcaption>
+      <div class="relative w-[300px] m-auto mb-5">
+        <input type="text" class="main-inputs p-3" placeholder="Coupon Code" />
+        <div class="absolute bt top-1 right-2">
+          <button class="main-btn rounded-2xl">Apply</button>
+        </div>
+      </div>
+      <div class="m-auto text-center"></div> -->
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="grid grid-cols-12 space-x-5">
+    <div class="col-span-5 p-5 ms-10 bg-white">
+      <figcaption>
+        <h3>Employee Reviews</h3>
+        <span class="md:text-[50px] text-bold">4.7</span>
+      </figcaption>
+
+      <div class="p-5">
+        <div class="flex items-center mb-2 w-fit">
+          <svg
+            class="w-4 h-4 text-yellow-300 me-1"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 22 20"
+          >
+            <path
+              d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+            />
+          </svg>
+          <svg
+            class="w-4 h-4 text-yellow-300 me-1"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 22 20"
+          >
+            <path
+              d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+            />
+          </svg>
+          <svg
+            class="w-4 h-4 text-yellow-300 me-1"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 22 20"
+          >
+            <path
+              d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+            />
+          </svg>
+          <svg
+            class="w-4 h-4 text-yellow-300 me-1"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 22 20"
+          >
+            <path
+              d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+            />
+          </svg>
+          <svg
+            class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 22 20"
+          >
+            <path
+              d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+            />
+          </svg>
+          <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+            4.95
+          </p>
+          <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+            out of
+          </p>
+          <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+            5
+          </p>
+        </div>
+        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+          1,745 global ratings
+        </p>
+        <div class="flex items-center mt-4">
+          <a
+            href="#"
+            class="text-sm font-medium text-[var(--text-color)] hover:underline"
+            >5 star</a
+          >
+          <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded-sm dark:bg-gray-700">
+            <div class="h-5 bg-yellow-300 rounded-sm" style="width: 70%"></div>
+          </div>
+          <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
+            >70%</span
+          >
+        </div>
+        <div class="flex items-center mt-4">
+          <a
+            href="#"
+            class="text-sm font-medium text-[var(--text-color)] hover:underline"
+            >4 star</a
+          >
+          <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded-sm dark:bg-gray-700">
+            <div class="h-5 bg-yellow-300 rounded-sm" style="width: 17%"></div>
+          </div>
+          <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
+            >17%</span
+          >
+        </div>
+        <div class="flex items-center mt-4">
+          <a
+            href="#"
+            class="text-sm font-medium text-[var(--text-color)] hover:underline"
+            >3 star</a
+          >
+          <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded-sm dark:bg-gray-700">
+            <div class="h-5 bg-yellow-300 rounded-sm" style="width: 8%"></div>
+          </div>
+          <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
+            >8%</span
+          >
+        </div>
+        <div class="flex items-center mt-4">
+          <a
+            href="#"
+            class="text-sm font-medium text-[var(--text-color)] hover:underline"
+            >2 star</a
+          >
+          <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded-sm dark:bg-gray-700">
+            <div class="h-5 bg-yellow-300 rounded-sm" style="width: 4%"></div>
+          </div>
+          <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
+            >4%</span
+          >
+        </div>
+        <div class="flex items-center mt-4">
+          <a
+            href="#"
+            class="text-sm font-medium text-[var(--text-color)] hover:underline"
+            >1 star</a
+          >
+          <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded-sm dark:bg-gray-700">
+            <div class="h-5 bg-yellow-300 rounded-sm" style="width: 1%"></div>
+          </div>
+          <span class="text-sm font-medium text-gray-500 dark:text-gray-400"
+            >1%</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col-span-6">
+      <div class="bg-white p-6">
+        <figcaption>
+          <span>Jan 20, 2024</span>
+          <span
+            ><div class="flex items-center mb-5">
+              <svg
+                class="w-4 h-4 ms-1 text-yellow-300"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg>
+              <svg
+                class="w-4 h-4 ms-1 text-yellow-300"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg>
+              <svg
+                class="w-4 h-4 ms-1 text-yellow-300"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg>
+              <svg
+                class="w-4 h-4 ms-1 text-yellow-300"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg>
+              <svg
+                class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg></div
+          ></span>
+        </figcaption>
+
+        <div class="flex items-center space-x-2">
+          <div>
+            <span
+              ><svg
+                width="37"
+                height="37"
+                viewBox="0 0 37 37"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  opacity="0.2"
+                  cx="18.5"
+                  cy="18.769"
+                  r="18"
+                  fill="#8B5E35"
+                />
+                <path
+                  d="M10.8118 23.769H8.84304L12.4276 13.5872H14.7045L18.294 23.769H16.3253L13.6058 15.6753H13.5263L10.8118 23.769ZM10.8764 19.7769H16.2457V21.2584H10.8764V19.7769ZM19.6351 23.769V13.5872H21.4796V18.2655H21.6039L25.5762 13.5872H27.8283L23.8908 18.1561L27.8631 23.769H25.6458L22.6081 19.404L21.4796 20.7364V23.769H19.6351Z"
+                  fill="#8B5E35"
+                />
+              </svg>
+            </span>
+          </div>
+          <span>Alex K.</span>
+        </div>
+        <figcaption class="space-y-5 my-5">
+          <div><span>Senior Analyst</span></div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+              aliquid deleniti aspernatur doloremque, obcaecati ullam expedita
+              culpa ex consequuntur reprehenderit.
+            </p>
+          </div>
+        </figcaption>
+
+        <hr class="w-full text-gray-200" />
+        <div class="my-5">
+          <figcaption>
+            <span>Jan 20, 2024</span>
+            <span
+              ><div class="flex items-center mb-5">
+                <svg
+                  class="w-4 h-4 ms-1 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 22 20"
+                >
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                  />
+                </svg>
+                <svg
+                  class="w-4 h-4 ms-1 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 22 20"
+                >
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                  />
+                </svg>
+                <svg
+                  class="w-4 h-4 ms-1 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 22 20"
+                >
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                  />
+                </svg>
+                <svg
+                  class="w-4 h-4 ms-1 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 22 20"
+                >
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                  />
+                </svg>
+                <svg
+                  class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 22 20"
+                >
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                  />
+                </svg></div
+            ></span>
+          </figcaption>
+
+          <div class="flex items-center space-x-2">
+            <div>
+              <span
+                ><svg
+                  width="37"
+                  height="37"
+                  viewBox="0 0 37 37"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    opacity="0.2"
+                    cx="18.5"
+                    cy="18.769"
+                    r="18"
+                    fill="#8B5E35"
+                  />
+                  <path
+                    d="M10.8118 23.769H8.84304L12.4276 13.5872H14.7045L18.294 23.769H16.3253L13.6058 15.6753H13.5263L10.8118 23.769ZM10.8764 19.7769H16.2457V21.2584H10.8764V19.7769ZM19.6351 23.769V13.5872H21.4796V18.2655H21.6039L25.5762 13.5872H27.8283L23.8908 18.1561L27.8631 23.769H25.6458L22.6081 19.404L21.4796 20.7364V23.769H19.6351Z"
+                    fill="#8B5E35"
+                  />
+                </svg>
+              </span>
+            </div>
+            <span>Alex K.</span>
+          </div>
+          <figcaption class="space-y-5 my-5">
+            <div><span>Senior Analyst</span></div>
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae aliquid deleniti aspernatur doloremque, obcaecati
+                ullam expedita culpa ex consequuntur reprehenderit.
+              </p>
+            </div>
+          </figcaption>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="main-section">
+  <h3 class="md:text-[40px] text-[var(--text-color)] text-center my-5">
+    Similar products
+  </h3>
+  <app-similarproduct [limit]="4"></app-similarproduct>
 </section>

@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DetailsService } from './details.service';
+import { SimilarproductComponent } from '../../shared/similar-product/similarproduct/similarproduct.component';
 
 @Component({
   selector: 'app-details',
-  imports: [],
+  imports: [SimilarproductComponent],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css',
 })
@@ -57,6 +58,7 @@ export class DetailsComponent implements OnInit {
   getDetails(): void {
     this.detailsService.getProductDetails(this.id).subscribe({
       next: (res) => {
+        console.log(res.data);
         this.productList = res.data;
       },
     });
