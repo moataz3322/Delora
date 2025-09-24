@@ -1,7 +1,13 @@
 <section class="my-10 text-white main-section">
   <div class="grid grid-cols-12">
-    <div class="col-span-6">
-      <img [src]="productList.imageCover" [alt]="productList.title" />
+    <div class="col-span-8 md:col-span-5">
+      <div>
+        <img
+          [src]="productList.imageCover"
+          class="md:w-[65%]"
+          [alt]="productList.title"
+        />
+      </div>
     </div>
     <div
       class="col-span-12 md:col-span-4 space-y-8 main-section text-black bg-white h-fit"
@@ -19,7 +25,6 @@
           <P>Category</P>
           <p>Discount</p>
           <p>Shipping:</p>
-          <p>Coupon Applied:</p>
         </div>
         <div class="space-y-5 text-[var(--text-color)]">
           <p>{{ productList.price }}EGP</p>
@@ -27,10 +32,17 @@
           <p>{{ productList.category.name }}</p>
           <p>50 EGP</p>
           <p class="text-[var(--main-color)]">Free</p>
-          <p class="text-[var(--main-color)]">0.00 EGP</p>
         </div>
       </div>
-      <hr class="w-[80%] m-auto" />
+
+      <div class="my-5 mx-auto text-center">
+        <button
+          (click)="addProductToCard(productList._id)"
+          class="main-btn w-full"
+        >
+          Add To Cart!
+        </button>
+      </div>
       <!-- <figcaption class="flex justify-between mt-5">
         <div class="space-y-5">
           <p>TOTAL:</p>

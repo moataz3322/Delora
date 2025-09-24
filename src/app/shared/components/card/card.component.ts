@@ -25,7 +25,7 @@ export class CardComponent {
         // this.router.navigate(['/cart']);
         console.log(res);
         console.log(productId);
-        this.toastrService.success(res.message, 'FreshCart', {
+        this.toastrService.success(res.message, 'Delora', {
           closeButton: true,
         });
       },

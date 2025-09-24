@@ -2,6 +2,9 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DetailsService } from './details.service';
 import { SimilarproductComponent } from '../../shared/similar-product/similarproduct/similarproduct.component';
+import { CartService } from '../cart/cart.service';
+import { Router } from 'express';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-details',
@@ -42,7 +45,8 @@ export class DetailsComponent implements OnInit {
   productList: Product = {} as Product;
   private readonly activatedRoute = inject(ActivatedRoute);
   private readonly detailsService = inject(DetailsService);
-
+  private readonly cartService = inject(CartService);
+  private readonly toastrService = inject(ToastrService);
   ngOnInit(): void {
     this.getId();
     this.getDetails();
@@ -60,6 +64,24 @@ export class DetailsComponent implements OnInit {
       next: (res) => {
         console.log(res.data);
         this.productList = res.data;
+      },
+    });
+  }
+
+  addProductToCard(productId: string): void {
+    this.cartService.addToCart(productId).subscribe({
+      next: (res) => {
+        this.cartService.countNum.set(res.numOfCartItems);
+        console.log('7madaaa', this.cartService.countNum);
+        // this.router.navigate(['/cart']);
+        console.log(res);
+        console.log(productId);
+        this.toastrService.success(res.message, 'Delora', {
+          closeButton: true,
+        });
+      },
+      error: (err) => {
+        console.log(err);
       },
     });
   }
